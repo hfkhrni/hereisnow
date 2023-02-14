@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    font-size: 16px;
+    line-height: 1.5;
+    /* color: #333; */
+    background: rgb(11, 13, 14);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock {
+    width: 350px;
+    height: 350px;
+    position: relative;
+}
+
+.clock .nw {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* display: flex; */
+    /* align-items: center; */
+    text-align: center;
+    transform: rotate(var(--rotation));
+    color: rgb(255, 255, 249);
+}
+
+
+.clock .nw-1 {
+    --rotation: 30deg;
+}
+
+.clock .nw-2 {
+    --rotation: 60deg;
+}.clock .nw-3 {
+    --rotation: 90deg;
+}.clock .nw-4 {
+    --rotation: 120deg;
+}.clock .nw-5 {
+    --rotation: 150deg;
+}.clock .nw-6 {
+    --rotation: 180deg;
+}.clock .nw-7 {
+    --rotation: 210deg;
+}.clock .nw-8 {
+    --rotation: 240deg;
+}.clock .nw-9 {
+    --rotation: 270deg;
+}.clock .nw-10 {
+    --rotation: 300deg;
+}.clock .nw-11 {
+    --rotation: 330deg;
+}.clock .nw-12 {
+    --rotation: 360deg;
+}
+
+.clock .hand {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    z-index: 10;
+    background-color: rgb(255, 255, 249);
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    transform-origin: bottom;
+}
+
+.clock::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 249);
+    z-index: 11;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+.clock .hand.hour {
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: rgb(255, 255, 249);
+}
+
+.clock .minute.hand {
+    position: absolute;
+    width: 2px;
+    height: 85px;
+    background-color: rgb(255, 255, 249);
+}
+
+.clock .hand.second {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background-color: red;
+}
